@@ -2,17 +2,15 @@ pipeline {
     agent any
 
     environment {
-        REPO_URL = 'your-repo-url'
-        BRANCH = 'main'
-        IMAGE_NAME = 'your-docker-image'
-        CONTAINER_NAME = 'your-container'
+        IMAGE_NAME = 'dvr_api:latest'
+        CONTAINER_NAME = 'dvr_api-container'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from the repository
-                git branch: "${BRANCH}", url: "${REPO_URL}"
+                // Checkout the code from the repository configured for this job
+                checkout scm
             }
         }
 
@@ -51,11 +49,9 @@ pipeline {
             steps {
                 script {
                     // Deploy the Docker container
-                    sh """
-                        docker stop ${CONTAINER_NAME} || true
-                        docker rm ${CONTAINER_NAME} || true
-                        docker run -d --name ${CONTAINER_NAME} -p 80:80 ${IMAGE_NAME}
-                    """
+                     sh "docker stop ${CONTAINER_NAME} || true"
+                     sh "docker rm ${CONTAINER_NAME} || true"
+                     sh "docker run -d --name ${CONTAINER_NAME} -p 80:80 ${IMAGE_NAME}"
                 }
             }
         }

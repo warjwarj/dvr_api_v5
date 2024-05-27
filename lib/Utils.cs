@@ -45,12 +45,17 @@ namespace dvr_api
 
         public static string getMDVRIdFromMessage(string message)
         {
-            string[] arr = message.Split(';', StringSplitOptions.TrimEntries);
-            foreach (string stringEntry in arr)
+            int maxPosIdCanBe = 2;
+            if (!string.IsNullOrEmpty(message))
             {
-                if (stringEntry.All(char.IsAsciiDigit))
+                string[] arr = message.Split(';', StringSplitOptions.TrimEntries);
+                if (arr.Length < 2) { return null; } // if smaller than smalest possible message like: $VIDEO;123456 then return null.
+                for (int i=0; i <= maxPosIdCanBe; i++)
                 {
-                    return stringEntry;
+                    if (arr[i].All(char.IsAsciiDigit))
+                    {
+                        return arr[i];
+                    }
                 }
             }
             return null;

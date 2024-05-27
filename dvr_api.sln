@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dvr_api", "dvr_api.csproj", "{1B3DE84F-7A5C-4DBA-A16B-08D1A0DDB7C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dvr_api", "dvr_api.csproj", "{1B3DE84F-7A5C-4DBA-A16B-08D1A0DDB7C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dvr_api_tests", "..\test\dvr_api_tests.csproj", "{0FE2CB1A-A047-4E5E-8FCE-C3FEA45255A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1B3DE84F-7A5C-4DBA-A16B-08D1A0DDB7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B3DE84F-7A5C-4DBA-A16B-08D1A0DDB7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B3DE84F-7A5C-4DBA-A16B-08D1A0DDB7C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FE2CB1A-A047-4E5E-8FCE-C3FEA45255A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FE2CB1A-A047-4E5E-8FCE-C3FEA45255A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FE2CB1A-A047-4E5E-8FCE-C3FEA45255A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FE2CB1A-A047-4E5E-8FCE-C3FEA45255A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
